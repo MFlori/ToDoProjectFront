@@ -1,0 +1,35 @@
+.taskHeader {
+  border-bottom-style: solid;
+  border-width: 1px;
+}
+
+#welcome {
+  background-color: rgb(13, 110, 253);
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+#inputDiv {
+  margin-top: 15px;
+}
+#buttonDiv {
+  margin-top: 15px;
+}
+
+#colTop {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+#taskElement {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#deleteTaskImage {
+  max-height: 15px;
+}

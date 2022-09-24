@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Todo App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container text-center fs-1" id="welcome">
+      Welcome to your todo App!
+    </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col" id="colTop">Todo</div>
+        <div class="col" id="colTop">Notiz</div>
+        <div class="col" id="colTop">Status</div>
+        <div class="col" id="colTop"></div>
+      </div>
+    </div>
+
+    <div class="container text-center" id="taskContainer"></div>
+
+    <div class="container text-center" id="inputDiv">
+      <div class="row">
+        <div class="col" id="colInputTask"><input id="task" /></div>
+        <div class="col" id="colInputNotes"><input id="notes" /></div>
+        <div class="col" id="colInputStatus">
+          <input type="checkbox" id="completed" />
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="container text-center" id="buttonDiv">
+        <button class="btn btn-outline-primary" id="addtask">add task</button>
+      </div>
+    </div>
+    <script type="module" src="script2.js"></script>
+  </body>
+</html>
