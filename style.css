@@ -30,6 +30,10 @@
   margin-bottom: 5px;
 }
 
-#deleteTaskImage {
+.deleteTaskImage {
   max-height: 15px;
+}
+
+.deleteTaskImage:hover {
+  cursor: pointer;
 }

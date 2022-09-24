@@ -39,11 +39,17 @@ async function postTodos(url) {
       status: statusInput.checked ? true : false,
     }),
   });
-  updateTasksAfterPostRequest();
+  addTaskAfterPostRequest();
 }
 
-//adds the posted Element to 'taskArray'
-async function updateTasksAfterPostRequest() {
+//deletes Task from Server
+function deleteTodos(url) {
+  console.log(url);
+  fetch(url, { method: "DELETE" });
+}
+
+//adds the posted Element to View
+async function addTaskAfterPostRequest() {
   await fetch(api_url)
     .then((res) => res.json())
     .then((data) => {
@@ -60,13 +66,9 @@ function addTaskLine(newTask) {
      <div class="col" id="taskElement">${
        newTask.status === true ? "erledigt" : "offen"
      }</div>
-     <div class="col" id="taskElement"><img id="deleteTaskImage" src="./resources/images/del_icon.png" alt="remove" onclick="deleteTask()" /></div>
+     <div class="col" id="taskElement"><img class="deleteTaskImage" src="./resources/images/del_icon.png" alt="removeImg" /></div>
     </div>`;
   //// CONTINUE HERE!!! don't use "onclick" --> better use Eventlistener
-}
-
-function deleteTask() {
-  console.log("Trash icon clicked");
 }
 
 //EVENTLISTENER
@@ -80,5 +82,14 @@ btnAddTask.addEventListener("click", () => {
     statusInput.checked = false;
   } else {
     alert("Todo Feld muss befüllt werden");
+  }
+});
+
+//click on trashcan icon starts removal of this task
+document.getElementById("taskContainer").addEventListener("click", (e) => {
+  if (e.target.className === "deleteTaskImage") {
+    let idTask = e.target.parentNode.parentNode.id.slice(4);
+    deleteTodos(api_url + "/" + idTask);
+    e.target.parentNode.parentNode.remove();
   }
 });
