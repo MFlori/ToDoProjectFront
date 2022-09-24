@@ -19,6 +19,7 @@ getTodos(api_url);
 async function getTodos(url) {
   const response = await fetch(url);
   let data = await response.json();
+  document.getElementById("taskContainer").innerHTML = "";
 
   data.forEach((element) => {
     addTaskLine(element);
@@ -39,7 +40,7 @@ async function postTodos(url) {
       status: statusInput.checked ? true : false,
     }),
   });
-  addTaskAfterPostRequest();
+  getTodos(api_url);
 }
 
 //deletes Task from Server
@@ -48,19 +49,10 @@ function deleteTodos(url) {
   fetch(url, { method: "DELETE" });
 }
 
-//adds the posted Element to View
-async function addTaskAfterPostRequest() {
-  await fetch(api_url)
-    .then((res) => res.json())
-    .then((data) => {
-      addTaskLine(data[data.length - 1]);
-    });
-}
-
 //fügt den View eine neue Zeile Todos hinzu
 function addTaskLine(newTask) {
   taskContainer.innerHTML += `  
-    <div class="row taskHeader" id="task${newTask.id}">
+    <div class="row taskHeader" id="${newTask.id}">
      <div class="col" id="taskElement">${newTask.task}</div>
      <div class="col" id="taskElement">${newTask.notes}</div>
      <div class="col" id="taskElement">${
@@ -88,7 +80,7 @@ btnAddTask.addEventListener("click", () => {
 //click on trashcan icon starts removal of this task
 document.getElementById("taskContainer").addEventListener("click", (e) => {
   if (e.target.className === "deleteTaskImage") {
-    let idTask = e.target.parentNode.parentNode.id.slice(4);
+    let idTask = e.target.parentNode.parentNode.id;
     deleteTodos(api_url + "/" + idTask);
     e.target.parentNode.parentNode.remove();
   }
