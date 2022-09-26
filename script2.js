@@ -2,11 +2,18 @@
 
 //DOM Elements
 
-let taskInput = document.getElementById("task");
-let notesInput = document.getElementById("notes");
-let statusInput = document.getElementById("completed");
-let taskContainer = document.getElementById("taskContainer");
-const btnAddTask = document.getElementById("addtask");
+const taskInput = document.getElementById("task");
+const notesInput = document.getElementById("notes");
+const statusInput = document.getElementById("completed");
+const taskContainer = document.getElementById("taskContainer");
+const changeTask = document.getElementById("changeTask");
+const changeNotes = document.getElementById("changeNotes");
+const changeStatus = document.getElementById("changeCompleted");
+const btnAddTask = document.getElementById("btnAddTask");
+const btnUpdateTask = document.getElementById("btnSaveChange");
+const dimmer = document.getElementById("dimmer");
+const todoChanger = document.getElementById("todoChanger");
+let selectedId;
 
 const api_url = "http://localhost:8080/tasks";
 
@@ -25,7 +32,7 @@ async function getTodos(url) {
   });
 }
 
-// POST Todos to Server and update 'taskArray'
+// POST Todos to Server
 async function postTodos(url) {
   const response = await fetch(url, {
     method: "POST",
@@ -42,6 +49,24 @@ async function postTodos(url) {
   getTodos(api_url);
 }
 
+// UPDATE Todos to Server
+async function updateTodos(url) {
+  console.log(url);
+  const response = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      task: changeTask.value,
+      notes: changeNotes.value,
+      status: changeStatus.checked ? true : false,
+    }),
+  });
+  getTodos(api_url);
+}
+
 //deletes Task from Server
 function deleteTodos(url) {
   console.log(url);
@@ -52,9 +77,9 @@ function deleteTodos(url) {
 function addTaskLine(newTask) {
   taskContainer.innerHTML += `  
     <div class="row taskHeader" id="${newTask.id}">
-     <div class="col" id="taskElement">${newTask.task}</div>
-     <div class="col" id="taskElement">${newTask.notes}</div>
-     <div class="col" id="taskElement">${
+     <div class="col editableTodo" id="taskElementTask">${newTask.task}</div>
+     <div class="col editableTodo" id="taskElementNotes">${newTask.notes}</div>
+     <div class="col editableTodo" id="taskElementState">${
        newTask.status === true ? "erledigt" : "offen"
      }</div>
      <div class="col" id="taskElement">${formatDate(newTask.dateCreated)}</div>
@@ -84,11 +109,39 @@ btnAddTask.addEventListener("click", () => {
   }
 });
 
-//click on trashcan icon starts removal of this task
+//start update process with click on button
+
+btnUpdateTask.addEventListener("click", () => {
+  updateTodos(api_url + "/update/" + selectedId);
+  closeChanger();
+});
+
+//show details or delete Tasks
 document.getElementById("taskContainer").addEventListener("click", (e) => {
+  //click on trashcan icon starts removal of this task
   if (e.target.className === "deleteTaskImage") {
     let idTask = e.target.parentNode.parentNode.id;
-    deleteTodos(api_url + "/" + idTask);
+    deleteTodos(api_url + "/delete/" + idTask);
     e.target.parentNode.parentNode.remove();
   }
+  //click on anything else in this row starts change process
+  if (e.target.className === "col editableTodo") {
+    console.log("I wanna change that!");
+    dimmer.style.visibility = "visible";
+    todoChanger.style.visibility = "visible";
+    changeTask.value = e.target.parentNode.children[0].textContent;
+    changeNotes.value = e.target.parentNode.children[1].textContent;
+    e.target.parentNode.children[2].textContent === "erledigt"
+      ? (changeCompleted.checked = true)
+      : (changeCompleted.checked = false);
+  }
+  selectedId = e.target.parentNode.id;
 });
+
+//dimm Screen when changing Todos
+dimmer.addEventListener("click", () => closeChanger());
+
+function closeChanger() {
+  dimmer.style.visibility = "hidden";
+  todoChanger.style.visibility = "hidden";
+}
