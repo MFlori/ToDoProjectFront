@@ -58,9 +58,17 @@ function addTaskLine(newTask) {
      <div class="col" id="taskElement">${
        newTask.status === true ? "erledigt" : "offen"
      }</div>
+     <div class="col" id="taskElement">${formatDate(newTask.dateCreated)}</div>
      <div class="col" id="taskElement"><img class="deleteTaskImage" src="./resources/images/del_icon.png" alt="removeImg" /></div>
     </div>`;
   //// CONTINUE HERE!!! don't use "onclick" --> better use Eventlistener
+}
+
+function formatDate(str) {
+  return (
+    str.substring(8, 10) + "." + str.substring(5, 7) + "." + str.slice(0, 4)
+  );
+  //  2022-09-26T07:17:41.024+00:00
 }
 
 //EVENTLISTENER

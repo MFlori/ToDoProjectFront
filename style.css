@@ -1,6 +1,14 @@
+#topLabel {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 .taskHeader {
   border-bottom-style: solid;
   border-width: 1px;
+  border-color: rgb(214, 214, 214);
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #welcome {
@@ -14,15 +22,14 @@
 }
 
 #inputDiv {
-  margin-top: 15px;
-}
-#buttonDiv {
-  margin-top: 15px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: rgb(214, 214, 214);
 }
 
 #colTop {
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 #taskElement {
