@@ -51,7 +51,6 @@ async function postTodos(url) {
 
 // UPDATE Todos to Server
 async function updateTodos(url) {
-  console.log(url);
   const response = await fetch(url, {
     method: "PUT",
     headers: {
@@ -69,7 +68,6 @@ async function updateTodos(url) {
 
 //deletes Task from Server
 function deleteTodos(url) {
-  console.log(url);
   fetch(url, { method: "DELETE" });
 }
 
@@ -126,7 +124,6 @@ document.getElementById("taskContainer").addEventListener("click", (e) => {
   }
   //click on anything else in this row starts change process
   if (e.target.className === "col editableTodo") {
-    console.log("I wanna change that!");
     dimmer.style.visibility = "visible";
     todoChanger.style.visibility = "visible";
     changeTask.value = e.target.parentNode.children[0].textContent;

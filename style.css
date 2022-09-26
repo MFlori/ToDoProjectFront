@@ -53,6 +53,7 @@ body {
   border-width: 2px;
   border-style: solid;
   visibility: hidden;
+  border-radius: 20px;
 }
 
 #dimmer {
