@@ -2,13 +2,122 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Login Todo</title>
+    <title>Your Todo-App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleIndex.css" />
   </head>
   <body>
-    <div>
-      <h1>Welcome to your todo-App</h1>
-      click <a href="login.html">here</a> to login <br />
-      click <a href="register.html">here</a> to register
+    <div class="main1">
+      <div class="container text-center" id="headlineMainDiv">
+        <p id="headlineMain">todo</p>
+      </div>
     </div>
+
+    <div class="container text-center">
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-lg"
+        id="btnStartLogin"
+      >
+        login
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-lg"
+        id="btnStartRegister"
+      >
+        register
+      </button>
+    </div>
+
+    <div class="container text-center inputDiv hide" id="registerHeader">
+      <h5>register for Todo-APP</h5>
+      <div class="container text-center">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Vorname"
+          aria-label="Vorname"
+          id="newFirstName"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nachname"
+          aria-label="Nachname"
+          id="newLastName"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="E-Mail"
+          aria-label="E-Mail"
+          id="newEmail"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Passwort"
+          aria-label="Passwort"
+          id="newPassword"
+        />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Passwort wiederholen"
+          aria-label="Passwort wiederholen"
+          id="newPasswordx2"
+        />
+
+        <button class="btn btn-outline-primary btnStart" id="btnRegister">
+          Registrierung abschließen
+        </button>
+      </div>
+      <div class="container text-center" id="errorRegister"></div>
+    </div>
+
+    <div class="container text-center inputDiv hide" id="loginHeader">
+      <h5>login to Todo-APP</h5>
+      <div class="container text-center">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="E-Mail"
+          aria-label="E-Mail"
+          name="E-Mail"
+          id="userName"
+        />
+
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Passwort"
+          aria-label="Passwort"
+          name="Passwort"
+          id="password"
+        />
+
+        <button class="btn btn-outline-primary btnStart" id="btnLogin">
+          login
+        </button>
+      </div>
+      <div class="container text-center" id="errorLogin"></div>
+    </div>
+
+    <script src="scriptIndex.js"></script>
+    <script src="scriptLogin.js"></script>
+    <script src="scriptRegister.js"></script>
   </body>
 </html>

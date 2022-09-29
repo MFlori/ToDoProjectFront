@@ -1,7 +1,7 @@
 const userNameInput = document.getElementById("userName");
 const passwordInput = document.getElementById("password");
 const btnLogin = document.getElementById("btnLogin");
-const errorMessage = document.getElementById("errorMessage");
+const errorLogin = document.getElementById("errorLogin");
 
 btnLogin.addEventListener("click", () => {
   if (userNameInput.value !== "" && passwordInput.value !== "") {
