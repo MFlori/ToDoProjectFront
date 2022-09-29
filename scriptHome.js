@@ -13,11 +13,12 @@ const btnAddTask = document.getElementById("btnAddTask");
 const btnUpdateTask = document.getElementById("btnSaveChange");
 const dimmer = document.getElementById("dimmer");
 const todoChanger = document.getElementById("todoChanger");
+const userID = getUserID().slice(1, -1);
 let selectedId;
 
 const api_url = "http://localhost:8080/tasks";
 
-getTodos(api_url);
+getTodos(api_url + "/" + userID);
 
 ///FUNCTIONS
 
@@ -46,7 +47,7 @@ async function postTodos(url) {
       status: statusInput.checked ? true : false,
     }),
   });
-  getTodos(api_url);
+  getTodos(api_url + "/" + userID);
 }
 
 // UPDATE Todos to Server
@@ -93,12 +94,20 @@ function formatDate(str) {
   //  2022-09-26T07:17:41.024+00:00
 }
 
+function getUserID() {
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+  return params.user; // "some_value"
+}
+
 //EVENTLISTENER
 
 //click on button starts post request
 btnAddTask.addEventListener("click", () => {
   if (taskInput.value.length > 0) {
-    postTodos(api_url);
+    postTodos(api_url + "/" + userID);
     taskInput.value = "";
     notesInput.value = "";
     statusInput.checked = false;
