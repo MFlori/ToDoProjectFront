@@ -64,7 +64,7 @@ async function updateTodos(url) {
       status: changeStatus.checked ? true : false,
     }),
   });
-  getTodos(api_url);
+  getTodos(api_url + "/" + userID);
 }
 
 //deletes Task from Server

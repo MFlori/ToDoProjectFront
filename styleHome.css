@@ -1,8 +1,3 @@
-body {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
 .deleteTaskImage {
   max-height: 15px;
 }
@@ -15,12 +10,6 @@ body {
   cursor: pointer;
 }
 
-.taskHeader {
-  border-top-style: solid;
-  border-width: 1px;
-  border-color: rgb(214, 214, 214);
-}
-
 #colTop {
   font-weight: bold;
   margin-bottom: 5px;
@@ -31,16 +20,6 @@ body {
   padding-bottom: 15px;
   border-width: 1px;
   border-color: rgb(214, 214, 214);
-}
-
-#welcome {
-  background-color: rgb(13, 110, 253);
-  color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 20px;
 }
 
 #todoChanger {
@@ -75,4 +54,29 @@ body {
   margin-top: 10px;
   font-size: large;
   font-weight: bold;
+}
+
+#taskMain {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 2em;
+  padding-top: 2em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.main2Top {
+  padding-top: 11em;
+}
+
+.taskHeader {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(13, 110, 253);
+}
+
+#taskHeader {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(13, 110, 253);
 }

@@ -1,16 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("./resources/images/background.png");
-  background-size: cover;
-
-  background-position: center top;
-}
-
 .inputDiv {
   width: 50%;
   background-color: rgb(227, 228, 233);
@@ -26,48 +13,6 @@ body {
 .show {
   display: block;
 }
-.main1 {
-  position: absolute;
-  width: 100%;
-  height: 11em;
-  background-color: rgba(13, 110, 253, 0.75);
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-bottom: 1px;
-  border-bottom-width: 2px;
-  border-bottom-color: rgb(240, 240, 240);
-  border-bottom-style: solid;
-}
-
-.main2Top {
-  width: 100%;
-  position: absolute;
-  top: 11em;
-}
-
-#headlineMainDiv {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  height: 150px;
-  width: 150px;
-
-  color: rgb(240, 240, 240);
-  background-color: blue;
-  border-radius: 75px;
-  border: solid;
-  border-width: 2px;
-
-  border-color: rgb(240, 2540, 240);
-}
-#headlineMain {
-  font-family: Dancing Script;
-  font-size: 400%;
-  margin: 0;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 
 .btnStart {
   margin-bottom: 20px;
@@ -76,11 +21,6 @@ body {
 .form-control {
   margin-top: 2px;
   margin-bottom: 2px;
-}
-#startButtonsDiv {
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
 }
 
 #errorRegister {
@@ -99,4 +39,10 @@ body {
 }
 #btnRegister {
   margin-top: 15px;
+}
+
+.main2Top {
+  width: 100%;
+  position: absolute;
+  top: 11em;
 }

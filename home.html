@@ -11,43 +11,66 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleHome.css" />
+    <link rel="stylesheet" href="styleHeader.css" />
   </head>
   <body>
-    <div class="container text-center fs-1" id="welcome">
-      Welcome to your todo App!
-    </div>
-    <div class="container text-center">
-      <div class="row">
-        <div class="col" id="colTop">Todo</div>
-        <div class="col" id="colTop">Notiz</div>
-        <div class="col" id="colTop">Status</div>
-        <div class="col" id="colTop">erstellt</div>
-        <div class="col" id="colTop"></div>
-      </div>
-    </div>
-
-    <div class="container text-center" id="inputDiv">
-      <div class="row">
-        <div class="col">
-          <input class="form-control text-center" id="task" />
-        </div>
-        <div class="col">
-          <input class="form-control text-center" id="notes" />
-        </div>
-        <div class="col">
-          <input type="checkbox" id="completed" />
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <button class="btn btn-primary btn-sm" id="btnAddTask">
-            add task
+    <div class="main1">
+      <div class="container text-center" id="headlineMainDiv">
+        <p id="headlineMain">todo</p>
+        <div id="startButtonsDiv">
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg"
+            onclick="location.href = 'index.html';"
+          >
+            logout
           </button>
         </div>
       </div>
     </div>
 
-    <div class="container text-center" id="taskContainer"></div>
+    <div class="container text-center main2Top">
+      <div class="container text-center" id="taskMain">
+        <div class="" container text-center id="taskHeader">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col" id="colTop">Todo</div>
+              <div class="col" id="colTop">Notiz</div>
+              <div class="col" id="colTop">Status</div>
+              <div class="col" id="colTop">erstellt</div>
+              <div class="col" id="colTop"></div>
+            </div>
+          </div>
+
+          <div class="container text-center" id="inputDiv">
+            <div class="row">
+              <div class="col">
+                <input class="form-control text-center" id="task" />
+              </div>
+              <div class="col">
+                <input class="form-control text-center" id="notes" />
+              </div>
+              <div class="col">
+                <input type="checkbox" id="completed" />
+              </div>
+              <div class="col"></div>
+              <div class="col">
+                <button class="btn btn-primary btn-sm" id="btnAddTask">
+                  add task
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center" id="taskContainer"></div>
+      </div>
+    </div>
 
     <div id="dimmer"></div>
     <div id="todoChanger">
