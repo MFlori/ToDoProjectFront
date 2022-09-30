@@ -1,3 +1,68 @@
+body {
+  background: url("./resources/images/background.png") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.mainHeader {
+  position: fixed;
+  top: 0;
+  display: grid;
+  justify-content: center;
+  background-color: red;
+  height: 150px;
+  width: 100%;
+  background-color: rgba(13, 110, 253, 0.75);
+  border-bottom: 1px;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(240, 240, 240);
+  border-bottom-style: solid;
+}
+
+#logoImg {
+  background-color: blue;
+  border-radius: 75px;
+  border: solid;
+  border-width: 2px;
+  color: rgb(240, 240, 240);
+  font-family: Dancing Script;
+  font-size: 40px;
+  padding-left: 33px;
+  padding-right: 33px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+#logoDiv {
+  margin: auto;
+}
+
+#startButtonsDiv {
+  margin-top: 110px;
+  position: fixed;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+  transition: display 2s;
+}
+
+.loginRegDiv {
+  margin-top: 170px;
+  width: 50%;
+  background-color: rgb(227, 228, 233);
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+}
+.margin10TB {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .deleteTaskImage {
   max-height: 15px;
 }

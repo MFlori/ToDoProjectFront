@@ -5,6 +5,7 @@ const errorLogin = document.getElementById("errorLogin");
 
 btnLogin.addEventListener("click", () => {
   if (userNameInput.value !== "" && passwordInput.value !== "") {
+    console.log("TRY");
     const userID = getUserID(
       "http://localhost:8080/getUserID/" +
         userNameInput.value +
