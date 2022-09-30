@@ -22,98 +22,100 @@
     <div class="main1">
       <div class="container text-center" id="headlineMainDiv">
         <p id="headlineMain">todo</p>
+        <div id="startButtonsDiv">
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg"
+            id="btnStartLogin"
+          >
+            login
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary btn-lg"
+            id="btnStartRegister"
+          >
+            register
+          </button>
+        </div>
       </div>
     </div>
+    <div class="main2Top">
+      <div class="main2Sub">
+        <div class="container text-center inputDiv hide" id="registerHeader">
+          <h5>register for Todo-APP</h5>
+          <div class="container text-center">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Vorname"
+              aria-label="Vorname"
+              id="newFirstName"
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nachname"
+              aria-label="Nachname"
+              id="newLastName"
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="E-Mail"
+              aria-label="E-Mail"
+              id="newEmail"
+            />
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Passwort"
+              aria-label="Passwort"
+              id="newPassword"
+            />
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Passwort wiederholen"
+              aria-label="Passwort wiederholen"
+              id="newPasswordx2"
+            />
 
-    <div class="container text-center">
-      <button
-        type="button"
-        class="btn btn-outline-primary btn-lg"
-        id="btnStartLogin"
-      >
-        login
-      </button>
-      <button
-        type="button"
-        class="btn btn-outline-primary btn-lg"
-        id="btnStartRegister"
-      >
-        register
-      </button>
-    </div>
+            <button class="btn btn-outline-primary btnStart" id="btnRegister">
+              Registrierung abschließen
+            </button>
+          </div>
+          <div class="container text-center" id="errorRegister"></div>
+        </div>
 
-    <div class="container text-center inputDiv hide" id="registerHeader">
-      <h5>register for Todo-APP</h5>
-      <div class="container text-center">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Vorname"
-          aria-label="Vorname"
-          id="newFirstName"
-        />
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Nachname"
-          aria-label="Nachname"
-          id="newLastName"
-        />
-        <input
-          type="text"
-          class="form-control"
-          placeholder="E-Mail"
-          aria-label="E-Mail"
-          id="newEmail"
-        />
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Passwort"
-          aria-label="Passwort"
-          id="newPassword"
-        />
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Passwort wiederholen"
-          aria-label="Passwort wiederholen"
-          id="newPasswordx2"
-        />
+        <div class="container text-center inputDiv hide" id="loginHeader">
+          <h5>login to Todo-APP</h5>
+          <div class="container text-center">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="E-Mail"
+              aria-label="E-Mail"
+              name="E-Mail"
+              id="userName"
+            />
 
-        <button class="btn btn-outline-primary btnStart" id="btnRegister">
-          Registrierung abschließen
-        </button>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Passwort"
+              aria-label="Passwort"
+              name="Passwort"
+              id="password"
+            />
+
+            <button class="btn btn-outline-primary btnStart" id="btnLogin">
+              login
+            </button>
+          </div>
+          <div class="container text-center" id="errorLogin"></div>
+        </div>
       </div>
-      <div class="container text-center" id="errorRegister"></div>
-    </div>
-
-    <div class="container text-center inputDiv hide" id="loginHeader">
-      <h5>login to Todo-APP</h5>
-      <div class="container text-center">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="E-Mail"
-          aria-label="E-Mail"
-          name="E-Mail"
-          id="userName"
-        />
-
-        <input
-          type="password"
-          class="form-control"
-          placeholder="Passwort"
-          aria-label="Passwort"
-          name="Passwort"
-          id="password"
-        />
-
-        <button class="btn btn-outline-primary btnStart" id="btnLogin">
-          login
-        </button>
-      </div>
-      <div class="container text-center" id="errorLogin"></div>
     </div>
 
     <script src="scriptIndex.js"></script>

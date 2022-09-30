@@ -12,7 +12,7 @@ btnLogin.addEventListener("click", () => {
         passwordInput.value
     );
   } else {
-    errorMessage.innerHTML = "Benutzername UND Passwort eingeben</br>";
+    errorLogin.innerHTML = "Benutzername UND Passwort eingeben</br>";
   }
 });
 
@@ -22,6 +22,6 @@ async function getUserID(url) {
   if (data !== "") {
     document.location = "home.html?user=" + data;
   } else {
-    errorMessage.innerHTML = "Passwort ungültig oder User nicht angelegt";
+    errorLogin.innerHTML = "Passwort ungültig oder User nicht angelegt";
   }
 }

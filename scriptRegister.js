@@ -17,7 +17,6 @@ const api_url = "http://localhost:8080/newuser";
 
 btnRegister.addEventListener("click", (e) => {
   checkReg(regFields) ? postNewUser(api_url) : null;
-  console.log(checkReg(regFields));
 });
 
 // POST Todos to Server
@@ -39,8 +38,8 @@ async function postNewUser(url) {
       errorRegister.innerHTML += "EmailAdresse bereits registriert";
     } else if (text.status === 201) {
       errorRegister.innerHTML = `User erfolgreich registriert!`;
+      errorRegister.style.color = "black";
     } else {
-      console.log(text.status);
       errorRegister.innerHTML = `Server error!`;
     }
   });
@@ -48,9 +47,10 @@ async function postNewUser(url) {
 function checkReg(fieldArr) {
   let checker = true;
   errorRegister.innerHTML = "";
+  errorRegister.style.color = null;
   for (let field of fieldArr) {
     if (field.value === "") {
-      field.style.borderColor = "red";
+      field.style.borderColor = "rgb(178, 0, 0)";
       errorRegister.innerHTML +=
         field.getAttribute("aria-label") + " fehlt</br>";
       checker = false;
@@ -63,10 +63,22 @@ function checkReg(fieldArr) {
     newPassword.value !== "" &&
     newPasswordx2.value !== ""
   ) {
-    newPassword.style.borderColor = "red";
-    newPasswordx2.style.borderColor = "red";
+    newPassword.style.borderColor = "rgb(178, 0, 0)";
+    newPasswordx2.style.borderColor = "rgb(178, 0, 0)";
     errorRegister.innerHTML += "Passwort wiederholen ist ungleich ";
     checker = false;
   }
+  if (ValidateEmail(newEmail.value) === false) {
+    errorRegister.innerHTML += "keine gültige Emailadresse eingegeben";
+    checker = false;
+  }
   return checker;
+}
+
+function ValidateEmail(emailString) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailString)) {
+    return true;
+  } else {
+    return false;
+  }
 }
